@@ -7,16 +7,13 @@ const invalidFeedback = computed(() =>
   name.value.length > 0 ? "Enter at least 4 characters." : "Please enter something.",
 );
 
-// const Header = styled.header`
-//   line-height: 1.5;
-//   max-height: 100vh;
-// `;
-
 export default {
+  setup() {},
+
   render() {
     return (
       <>
-        <BContainer class="allign-items-center justify-content-center vh-100">
+        <BContainer class="bg-purple-800 mt-5 mb-5 p-5">
           <BFormGroup
             id="fieldset-1"
             description="Let us know your name."

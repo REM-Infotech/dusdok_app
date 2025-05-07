@@ -1,0 +1,92 @@
+$amethyst: #743495 !default;
+$blue-chill: #0a5f65 !default;
+
+$amethyst-50: #fbf6fe !default;
+$amethyst-100: #f5ebfc !default;
+$amethyst-200: #ecdbf9 !default;
+$amethyst-300: #debef4 !default;
+$amethyst-400: #ca94ec !default;
+$amethyst-500: #ac59dd !default;
+$amethyst-600: #a14cd1 !default;
+$amethyst-700: #8a3ab6 !default;
+$amethyst-800: #743495 !default;
+$amethyst-900: #5f2b78 !default;
+$amethyst-950: #411457 !default;
+
+$blue-chill-50: #effefd !default;
+$blue-chill-100: #c7fffb !default;
+$blue-chill-200: #90fff7 !default;
+$blue-chill-300: #51f7f2 !default;
+$blue-chill-400: #1de4e4 !default;
+$blue-chill-500: #04c5c8 !default;
+$blue-chill-600: #00999f !default;
+$blue-chill-700: #057a80 !default;
+$blue-chill-800: #0a5f65 !default;
+$blue-chill-900: #0d5054 !default;
+$blue-chill-950: #002e33 !default;
+
+$blue-chills: (
+  "blue-chill-50": $blue-chill-50,
+  "blue-chill-100": $blue-chill-100,
+  "blue-chill-200": $blue-chill-200,
+  "blue-chill-300": $blue-chill-300,
+  "blue-chill-400": $blue-chill-400,
+  "blue-chill-500": $blue-chill-500,
+  "blue-chill-600": $blue-chill-600,
+  "blue-chill-700": $blue-chill-700,
+  "blue-chill-800": $blue-chill-800,
+  "blue-chill-900": $blue-chill-900,
+  "blue-chill-950": $blue-chill-950,
+) !default;
+
+$amethysts: (
+  "amethyst-50": $amethyst-50,
+  "amethyst-100": $amethyst-100,
+  "amethyst-200": $amethyst-200,
+  "amethyst-300": $amethyst-300,
+  "amethyst-400": $amethyst-400,
+  "amethyst-500": $amethyst-500,
+  "amethyst-600": $amethyst-600,
+  "amethyst-700": $amethyst-700,
+  "amethyst-800": $amethyst-800,
+  "amethyst-900": $amethyst-900,
+  "amethyst-950": $amethyst-950,
+) !default;
+
+$colors: (
+  "blue": $blue,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+  "black": $black,
+  "white": $white,
+  "gray": $gray-600,
+  "gray-dark": $gray-800,
+  "amethyst": $amethyst,
+  "amethyst-light": $amethyst-600,
+  "amethyst-dark": $amethyst-800,
+  "blue-chill": $blue-chill,
+  "blue-chill-light": $blue-chill-600,
+  "blue-chill-dark": $blue-chill-800,
+) !default;
+
+$all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans,
+  $amethysts,
+  $blue-chills
+) !default;

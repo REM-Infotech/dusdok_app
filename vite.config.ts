@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueStyledPlugin from "@vue-styled-components/plugin"
@@ -16,6 +17,7 @@ export default defineConfig({
       resolvers: [BootstrapVueNextResolver()],
     }),
     vueStyledPlugin(),
+    tailwindcss(),
   ],
   resolve: {
     alias: {
