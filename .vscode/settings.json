@@ -14,5 +14,18 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "material-icon-theme.files.associations": {
     "*.jsx": "vue"
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "python": true,
+    "log": true,
+    "properties": false,
+    "vue": true,
+    "typescript": true,
+    "jsonc": true,
+    "javascript": true
   }
 }

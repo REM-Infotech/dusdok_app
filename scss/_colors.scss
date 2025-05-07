@@ -1,3 +1,7 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
 $amethyst: #743495 !default;
 $blue-chill: #0a5f65 !default;
 
@@ -90,3 +94,14 @@ $all-colors: map-merge-multiple(
   $amethysts,
   $blue-chills
 ) !default;
+
+$custom-colors: (
+  "blue-chill": $blue-chill,
+  "blue-chill-light": $blue-chill-600,
+  "blue-chill-dark": $blue-chill-800,
+  "amethyst": $amethyst,
+  "amethyst-light": $amethyst-600,
+  "amethyst-dark": $amethyst-800,
+) !default;
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
