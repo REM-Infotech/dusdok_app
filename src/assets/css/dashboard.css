@@ -1,7 +1,6 @@
 @import "./base.css";
 
-html,
-body {
+#app {
   background-color: var(--color-blue-chill-800);
   height: 100%;
 }
