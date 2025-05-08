@@ -32,11 +32,10 @@ const Reactive = {
         <Container class="bg-blue-chill-800 p-5 rounded rounded-4 shadow">
           <FormView>
             <img
-              class="mb-4"
-              src="./src/assets/brand/bootstrap-logo.svg"
+              class="mb-4 rounded rounded-4"
+              src="./src/assets/img/favicon.png"
               alt=""
-              width="72"
-              height="57"
+              width="82"
             />
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <FloatingForm
