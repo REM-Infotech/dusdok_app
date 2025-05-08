@@ -1,0 +1,7 @@
+@import "./base.css";
+
+html,
+body {
+  background-color: var(--color-blue-chill-800);
+  height: 100%;
+}

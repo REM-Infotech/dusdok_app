@@ -1,16 +1,16 @@
 import "@/assets/css/sign-in.css";
 import styled from "@vue-styled-components/core";
 import { BContainer, BFormGroup, BInput } from "bootstrap-vue-next";
-import { onBeforeMount } from "vue";
-
-import { InputController } from "./inputHandle.ts";
+import { onBeforeMount, onBeforeUnmount } from "vue";
+import FormView from "./res/FormView.jsx";
+import { InputController } from "./res/inputHandle.ts";
 
 /**
- *  @type {import("./inputHandle.ts").InptController}
+ *  @type {import("./res/inputHandle.ts").InptController}
  */
 const inputState = new InputController();
 /**
- *  @type {import("./inputHandle.ts").InptController}
+ *  @type {import("./res/inputHandle.ts").InptController}
  */
 const inputStatePassword = new InputController();
 
@@ -21,13 +21,16 @@ const Reactive = {
     onBeforeMount(() => {
       document.body.classList.add(...["d-flex", "align-items-center", "py-4", "bg-purple"]);
     });
+    onBeforeUnmount(() => {
+      document.body.classList.remove(...["d-flex", "align-items-center", "py-4", "bg-purple"]);
+    });
   },
 
   render() {
     return (
       <>
-        <Container>
-          <form action="">
+        <Container class="bg-blue-chill-800 p-5 rounded rounded-4 shadow">
+          <FormView>
             <img
               class="mb-4"
               src="./src/assets/brand/bootstrap-logo.svg"
@@ -40,7 +43,6 @@ const Reactive = {
               id="fieldset-4"
               label="Name"
               label-for="input-floating-4"
-              valid-feedback="Thank you!"
               invalid-feedback={inputState.invalidFeedback.value}
               state={inputState.floatingState.value}
               floating
@@ -56,9 +58,8 @@ const Reactive = {
               id="fieldset-4"
               label="Name"
               label-for="input-floating-4"
-              valid-feedback="Thank you!"
               invalid-feedback={inputStatePassword.invalidFeedback.value}
-              state={inputStatePassword.invalidFeedback.value}
+              state={inputStatePassword.floatingState.value}
               floating
             >
               <InputPassword
@@ -79,11 +80,11 @@ const Reactive = {
                 Remember me
               </label>
             </FormCheck>
-            <button class="btn btn-primary w-100 py-2" type="submit">
+            <button class="btn btn-success shadow w-100 py-2" type="submit">
               Sign in
             </button>
             <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2025</p>
-          </form>
+          </FormView>
         </Container>
       </>
     );

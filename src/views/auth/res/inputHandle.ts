@@ -1,8 +1,6 @@
 import { computed, ref, type ComputedRef } from "vue";
 
 
-
-
 interface InptController {
 
   typeInput: string

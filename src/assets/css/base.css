@@ -1,0 +1,29 @@
+:root {
+  --color-amethyst-50: #fbf6fe;
+  --color-amethyst-100: #f5ebfc;
+  --color-amethyst-200: #ecdbf9;
+  --color-amethyst-300: #debef4;
+  --color-amethyst-400: #ca94ec;
+  --color-amethyst-500: #ac59dd;
+  --color-amethyst-600: #a14cd1;
+  --color-amethyst-700: #8a3ab6;
+  --color-amethyst-800: #743495;
+  --color-amethyst-900: #5f2b78;
+  --color-amethyst-950: #411457;
+
+  --color-blue-chill-50: #effefd;
+  --color-blue-chill-100: #c7fffb;
+  --color-blue-chill-200: #90fff7;
+  --color-blue-chill-300: #51f7f2;
+  --color-blue-chill-400: #1de4e4;
+  --color-blue-chill-500: #04c5c8;
+  --color-blue-chill-600: #00999f;
+  --color-blue-chill-700: #057a80;
+  --color-blue-chill-800: #0a5f65;
+  --color-blue-chill-900: #0d5054;
+  --color-blue-chill-950: #002e33;
+}
+html,
+body {
+  height: 100%;
+}

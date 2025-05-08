@@ -1,0 +1,7 @@
+{
+  "name": "dusdok_app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}

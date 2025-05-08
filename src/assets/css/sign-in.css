@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import "./base.css";
 
 html,
 body {
-  background-color: #002e33;
+  background-color: var(--color-blue-chill-950);
   height: 100%;
 }
 
