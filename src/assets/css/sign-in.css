@@ -1,10 +1,5 @@
 @import "./base.css";
 
-#app {
-  background-color: var(--color-blue-chill-950);
-  height: 100%;
-}
-
 .form-signin {
   max-width: 330px;
   padding: 1rem;

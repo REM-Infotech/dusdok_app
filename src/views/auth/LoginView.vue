@@ -39,10 +39,10 @@ const inputState = new InputController("");
 const inputStatePassword = new InputController("");
 
 onBeforeMount(() => {
-  document.body.classList.add(...["d-flex", "align-items-center", "py-4", "bg-purple"]);
+  document.body.classList.add(...["d-flex", "align-items-center", "py-4", "bg-blue-chill-950"]);
 });
 onBeforeUnmount(() => {
-  document.body.classList.remove(...["d-flex", "align-items-center", "py-4", "bg-purple"]);
+  document.body.classList.remove(...["d-flex", "align-items-center", "py-4", "bg-blue-chill-950"]);
 });
 const router = useRouter();
 function HandleSubmit(event: Event) {
