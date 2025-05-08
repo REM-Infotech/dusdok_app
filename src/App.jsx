@@ -1,12 +1,9 @@
 import { RouterView } from "vue-router";
-
 export default {
   render() {
     return (
       <>
-        <main>
-          <RouterView />
-        </main>
+        <RouterView />
       </>
     );
   },

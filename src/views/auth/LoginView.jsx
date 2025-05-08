@@ -1,7 +1,7 @@
+import "@/assets/css/sign-in.css";
 import styled from "@vue-styled-components/core";
 import { BContainer, BFormGroup, BInput } from "bootstrap-vue-next";
 import { computed, onBeforeMount, ref } from "vue";
-import "./assets/css/sign-in.css";
 
 const floatingName = ref("");
 
@@ -81,6 +81,21 @@ export default {
                 placeholder="Enter your name please"
               />
             </FloatingForm>
+            <div class="form-check text-start my-3">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value="remember-me"
+                id="checkDefault"
+              />
+              <label class="form-check-label" for="checkDefault">
+                Remember me
+              </label>
+            </div>
+            <button class="btn btn-primary w-100 py-2" type="submit">
+              Sign in
+            </button>
+            <p class="mt-5 mb-3 text-body-secondary">&copy; 2017–2025</p>
           </form>
         </Container>
       </>
