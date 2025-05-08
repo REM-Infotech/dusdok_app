@@ -8,11 +8,11 @@ import { InputController } from "./inputHandle.ts";
 /**
  *  @type {import("./inputHandle.ts").InptController}
  */
-const inputState = InputController();
+const inputState = new InputController();
 /**
  *  @type {import("./inputHandle.ts").InptController}
  */
-const inputStatePassword = InputController();
+const inputStatePassword = new InputController();
 
 inputStatePassword.invalidFeedback.value;
 
