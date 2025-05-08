@@ -5,7 +5,7 @@ import MainFrame from "@/components/MainFrame.vue";
   <MainFrame>
     <BCard
       title="Card Title"
-      img-src="@/assets/25-600x300.jpg"
+      img-src="/src/assets/25-600x300.jpg"
       img-alt="Image"
       img-top
       tag="article"

@@ -11,6 +11,7 @@ declare module 'vue' {
     BButton: typeof import('bootstrap-vue-next/components/BButton')['BButton']
     BCard: typeof import('bootstrap-vue-next/components/BCard')['BCard']
     BCardText: typeof import('bootstrap-vue-next/components/BCard')['BCardText']
+    BFormCheckbox: typeof import('bootstrap-vue-next/components/BFormCheckbox')['BFormCheckbox']
     MainFrame: typeof import('./src/components/MainFrame.vue')['default']
     NavbarView: typeof import('./src/components/NavbarView.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
