@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const props = defineProps({
   name: {
     type: String,
@@ -35,7 +38,14 @@ const props = defineProps({
       "Some quick example text to build on the card title and make up the bulk of the card's content.",
   },
 });
-const emit = defineEmits(["update:cardClicked"]);
+
+const getRoute = () => {
+  setTimeout(() => {
+    router.push({
+      name: props.name,
+    });
+  }, 1000);
+};
 </script>
 
 <template>
@@ -51,8 +61,6 @@ const emit = defineEmits(["update:cardClicked"]);
     <BCardText>
       {{ props.description }}
     </BCardText>
-    <BButton href="#" variant="primary" @click="emit('update:cardClicked', props.name)">
-      Go somewhere
-    </BButton>
+    <BButton variant="primary" @click="getRoute"> Go somewhere </BButton>
   </BCard>
 </template>

@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import CardView from "@/components/CardView.vue";
 import MainFrame from "@/components/MainFrame.vue";
-import { ref, watch } from "vue";
-import { useRouter } from "vue-router";
+import { ref } from "vue";
 
-const router = useRouter();
 const SelectedCard = ref("");
 
 const cards = [
@@ -27,10 +25,6 @@ const cards = [
     description: "description",
   },
 ];
-
-watch(SelectedCard, (newValue) => {
-  router.push({ name: newValue });
-});
 </script>
 <template>
   <MainFrame>
