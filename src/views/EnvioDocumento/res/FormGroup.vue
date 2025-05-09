@@ -2,13 +2,22 @@
 import { computed, ref, watch } from "vue";
 
 const props = defineProps({
+  isSubmitted: {
+    type: Boolean,
+    default: false,
+  },
+
+  type: {
+    type: String,
+    default: "text",
+  },
   id_group: {
     type: String,
     required: true,
   },
   description: {
     type: String,
-    required: true,
+    defalt: "",
   },
   label: {
     type: String,
@@ -35,17 +44,74 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  validState: {
+    type: Boolean,
+    default: false,
+  },
 });
-const emit = defineEmits(["update:modelValue"]);
+
+const list_match = [
+  {
+    type: "text",
+    regex: /^[a-zA-Z\s]+$/,
+  },
+  {
+    type: "email",
+    regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+  },
+  {
+    type: "password",
+    regex: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+  },
+  {
+    type: "phone",
+    regex: /^\+?[1-9]\d{1,14}$/,
+  },
+  {
+    type: "cpf",
+    regex: /^\d{3}\.\d{3}\.\d{3}-\d{2}$/,
+  },
+];
+
+const match_Text = (value: string) => {
+  const match = list_match.find((item) => item.type === props.type);
+  if (match) {
+    return match.regex.test(value);
+  }
+  return false;
+};
+
+const emit = defineEmits(["update:modelValue", "update:validState"]);
 const floatingName = ref(props.modelValue);
-const floatingState = computed(() => floatingName.value.length >= 4);
+const floatingState = computed(() =>
+  !props.isSubmitted
+    ? null
+    : floatingName.value.length === 0
+      ? null
+      : match_Text(floatingName.value)
+        ? true
+        : false,
+);
+
+const text_errors: Record<string, string> = {
+  text: "Please enter a valid name.",
+  email: "Please enter a valid email address.",
+  password: "Please enter a valid password.",
+  phone: "Please enter a valid phone number.",
+  cpf: "Please enter a valid CPF.",
+};
+
 const floatingInvalidFeedback = computed(() =>
-  floatingName.value.length > 0 ? "Enter at least 4 characters." : "Please enter something.",
+  floatingName.value.length > 1 ? text_errors[props.type] : text_errors[props.type],
 );
 watch(floatingName, (newValue) => {
   if (floatingState.value) {
-    emit("update:modelValue", newValue);
+    emit("update:validState", newValue);
   }
+});
+
+watch(floatingState, (newValue) => {
+  emit("update:validState", newValue);
 });
 </script>
 

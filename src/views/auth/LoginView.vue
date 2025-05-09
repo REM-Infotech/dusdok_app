@@ -53,13 +53,13 @@ function HandleSubmit(event: Event) {
 </script>
 
 <template>
-  <BContainer class="bg-blue-chill-800 p-5 rounded rounded-4 shadow form-signin">
+  <BContainer class="bg-blue-chill-800 p-5 rounded rounded-4 shadow form-signin" id="LoginForm">
     <form @submit="HandleSubmit">
       <img class="mb-4 rounded rounded-4" src="@/assets/img/favicon.png" alt="" width="82" />
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
       <FloatingForm
         id="fieldset-4"
-        label="Name"
+        label="Email"
         label-for="input-floating-4"
         :invalid-feedback="inputState.invalidFeedback.value"
         :state="inputState.floatingState.value"
@@ -67,14 +67,16 @@ function HandleSubmit(event: Event) {
       >
         <InputLogin
           id="input-floating-4"
+          type="email"
           v-model="inputState.floatingVal.value"
           :state="inputState.floatingState.value"
-          placeholder="Enter your name please"
+          placeholder="Email"
+          required
         />
       </FloatingForm>
       <FloatingForm
         id="fieldset-4"
-        label="Name"
+        label="Senha"
         label-for="input-floating-4"
         :invalid-feedback="inputStatePassword.invalidFeedback.value"
         :state="inputStatePassword.floatingState.value"
@@ -84,7 +86,9 @@ function HandleSubmit(event: Event) {
           id="input-floating-4"
           v-model="inputStatePassword.floatingVal.value"
           :state="inputStatePassword.floatingState.value"
-          placeholder="Enter your name please"
+          placeholder="Password"
+          type="password"
+          required
         />
       </FloatingForm>
       <FormCheck>

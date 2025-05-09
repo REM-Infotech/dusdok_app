@@ -28,3 +28,18 @@ body {
   zoom: 83%;
   height: 100%;
 }
+
+#LoginForm {
+  zoom: 150%;
+}
+
+@media (min-width: 768px) {
+  html,
+  body {
+    zoom: 100%;
+  }
+
+  #LoginForm {
+    zoom: 150%;
+  }
+}
