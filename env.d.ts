@@ -16,3 +16,7 @@ declare module "*.jpg" {
   const src: string;
   export default src;
 }
+declare module "*.js" {
+  const properties: Record<string, string | boolean>;
+  export default properties;
+}
