@@ -22,7 +22,7 @@ const show = ref(true);
 import formStore from "@/stores/formFiles";
 
 const store = formStore();
-const list_form = store.list_form;
+const list_form = store.constructListForm();
 
 const checkState = (pageIndex: string) => {
   if (isSubmitted.value && pageIndex === "page2" && invalidFeedbackref.value) {
