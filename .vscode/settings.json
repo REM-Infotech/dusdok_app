@@ -21,9 +21,12 @@
     "log": true,
     "properties": false,
     "vue": false,
-    "typescript": true,
+    "typescript": false,
     "jsonc": true,
     "javascript": true
   },
-  "java.configuration.updateBuildConfiguration": "interactive"
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

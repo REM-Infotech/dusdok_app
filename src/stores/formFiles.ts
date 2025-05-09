@@ -1,17 +1,7 @@
 import { defineStore } from 'pinia';
-import { reactive, ref, type Reactive, type Ref } from 'vue';
+import { reactive, ref, type Reactive } from 'vue';
+import type { FormGroup } from './types';
 
-interface FormGroup {
-
-  id_group: string;
-  id_input: string;
-  label: string;
-  floating: boolean;
-  placeholder: string;
-  modelValue: Ref<string>;
-  type: string;
-
-}
 
 
 

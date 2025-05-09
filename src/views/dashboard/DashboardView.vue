@@ -1,32 +1,18 @@
 <script setup lang="ts">
 import CardView from "@/components/CardView.vue";
 import MainFrame from "@/components/MainFrame.vue";
-import { reactive, ref } from "vue";
+import cardStore from "@/stores/cardStore";
+import { onBeforeMount, ref } from "vue";
 
+const store = cardStore();
 const SelectedCard = ref("");
+const cards = store.cardList;
 
-const cards = [
-  reactive({
-    name: "envio-documento",
-    title: "Envio de Documentos",
-    imgSrc: ref(""),
-    addrimgSrc: "25-600x300",
-    imgAlt: "Image 1",
-    imgTop: true,
-    tag: "article",
-    description: "Envio de documentos para admissão",
-  }),
-  reactive({
-    name: "Card2",
-    title: "Card 2 Title",
-    imgSrc: ref(""),
-    addrimgSrc: "25-600x300",
-    imgAlt: "Image 2",
-    imgTop: true,
-    tag: "article",
-    description: "description",
-  }),
-];
+onBeforeMount(() => {
+  if (cards.length === 0) {
+    store.loadCards();
+  }
+});
 </script>
 <template>
   <MainFrame>
@@ -35,8 +21,20 @@ const cards = [
         <div class="d-grid gap-3 justify-content-center">
           <CardView
             v-for="card in cards"
-            v-model:imgSrc="card.imgSrc"
-            :addrimgSrc="card.addrimgSrc"
+            :imgSrc="card.imgSrc"
+            :key="card.name"
+            :name="card.name"
+            :description="card.description"
+            :title="card.title"
+            v-model:card-clicked="SelectedCard"
+          />
+        </div>
+      </BTab>
+      <BTab title="Suas Informações">
+        <div class="d-grid gap-3 justify-content-center" v-if="cards.length > 0">
+          <CardView
+            v-for="card in cards"
+            :imgSrc="card.imgSrc"
             :key="card.name"
             :name="card.name"
             :description="card.description"
