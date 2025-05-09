@@ -60,10 +60,6 @@ const list_match = [
     regex: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
   },
   {
-    type: "password",
-    regex: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
-  },
-  {
     type: "phone",
     regex: /^\+?[1-9]\d{1,14}$/,
   },
@@ -87,22 +83,19 @@ const floatingState = computed(() =>
   !props.isSubmitted
     ? null
     : floatingName.value.length === 0
-      ? null
-      : match_Text(floatingName.value)
-        ? true
-        : false,
+      ? false
+      : match_Text(floatingName.value),
 );
 
 const text_errors: Record<string, string> = {
   text: "Please enter a valid name.",
   email: "Please enter a valid email address.",
-  password: "Please enter a valid password.",
   phone: "Please enter a valid phone number.",
   cpf: "Please enter a valid CPF.",
 };
 
 const floatingInvalidFeedback = computed(() =>
-  floatingName.value.length > 1 ? text_errors[props.type] : text_errors[props.type],
+  floatingName.value.length >= 0 ? text_errors[props.type] : text_errors[props.type],
 );
 watch(floatingName, (newValue) => {
   if (floatingState.value) {

@@ -39,7 +39,8 @@ body {
     zoom: 100%;
   }
 
-  #LoginForm {
-    zoom: 150%;
+  #LoginForm,
+  #NavBar {
+    zoom: 100%;
   }
 }

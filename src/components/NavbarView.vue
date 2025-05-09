@@ -8,7 +8,7 @@ function toLogin(event: Event) {
 }
 </script>
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary pt-5">
+  <nav id="NavBar" class="navbar navbar-expand-lg bg-body-tertiary pt-5">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"> Navbar </a>
       <button

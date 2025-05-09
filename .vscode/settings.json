@@ -20,7 +20,7 @@
     "python": true,
     "log": true,
     "properties": false,
-    "vue": true,
+    "vue": false,
     "typescript": true,
     "jsonc": true,
     "javascript": true

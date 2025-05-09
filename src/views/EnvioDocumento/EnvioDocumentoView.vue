@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import MainFrame from "@/components/MainFrame.vue";
+import formStore from "@/stores/formFiles";
 import { ref } from "vue";
 import FormGroup from "./res/FormGroup.vue";
-const floatingName = ref("");
 
+const floatingName = ref("");
+const show = ref(true);
 const isSubmitted = ref(false);
 const isSubmitted2 = ref(false);
+const store = formStore();
+
+store.constructListForm();
 
 function onSubmit(event: Event) {
   isSubmitted.value = true;
@@ -17,12 +22,6 @@ function onReset() {
   floatingName.value = "";
   console.log("Form reset");
 }
-const show = ref(true);
-
-import formStore from "@/stores/formFiles";
-
-const store = formStore();
-const list_form = store.constructListForm();
 
 const checkState = (pageIndex: string) => {
   if (isSubmitted.value && pageIndex === "page2" && invalidFeedbackref.value) {
@@ -44,7 +43,7 @@ const invalidFeedbackref = ref(false);
           <div>
             <BForm v-if="show" @submit="onSubmit" @reset="onReset" data-bs-theme="light">
               <BRow>
-                <BCol v-for="(form, index) in list_form" :key="index">
+                <BCol v-for="(form, index) in store.list_form" :key="index">
                   <FormGroup
                     v-model:model-value="form.modelValue"
                     v-model:validState="invalidFeedbackref"

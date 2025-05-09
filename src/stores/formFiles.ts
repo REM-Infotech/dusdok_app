@@ -16,11 +16,11 @@ interface FormGroup {
 
 
 export default defineStore('formStore', () => {
-  const list_form: Reactive<FormGroup>[] = [];
+  const list_form = ref<Reactive<FormGroup>[]>([]);
 
-  function constructListForm() {
+  async function constructListForm() {
 
-    return [
+    list_form.value = [
       reactive({
         id_group: "test_gp",
         id_input: "teste_inpt",
@@ -37,8 +37,9 @@ export default defineStore('formStore', () => {
         floating: true,
         placeholder: "teste2",
         modelValue: ref(""),
-        type: "password",
-      }),]
+        type: "text",
+      }),
+    ]
 
   }
 
