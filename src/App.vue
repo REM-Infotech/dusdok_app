@@ -12,7 +12,8 @@ Keyboard.addListener("keyboardWillShow", (info) => {
     (activeElement.tagName === "INPUT" || activeElement.tagName === "TEXTAREA")
   ) {
     const rect = activeElement.getBoundingClientRect();
-    const keyboardTop = window.innerHeight - info.keyboardHeight;
+    const keyboardHeight = info.keyboardHeight + 100;
+    const keyboardTop = window.innerHeight - keyboardHeight;
     if (rect.bottom > keyboardTop) {
       const offset = rect.bottom - keyboardTop + 25; // extra margin
       store.increment(offset);
