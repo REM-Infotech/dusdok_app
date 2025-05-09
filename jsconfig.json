@@ -12,9 +12,8 @@
     "strict": true
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "src/views/EnvioDocumento/EnvioDocumentoView.vue"
-  ]
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue"
+  ],
 }
