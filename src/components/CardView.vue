@@ -14,10 +14,6 @@ const props = defineProps({
     type: String,
     default: "",
   },
-  addrimgSrc: {
-    type: String,
-    default: "",
-  },
   imgAlt: {
     type: String,
     default: "Image",
