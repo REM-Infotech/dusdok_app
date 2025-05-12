@@ -23,7 +23,12 @@ const router = createRouter({
     {
       path: "/envio-documento",
       name: "envio-documento",
-      component: () => import("../views/EnvioDocumento/EnvioDocumentoView.vue"),
+      component: () => import("../views/dashboard/pendencias/EnvioDocumentoView.vue"),
+    },
+    {
+      path: "/info-complementar",
+      name: "info-complementar",
+      component: () => import("../views/dashboard/pendencias/InformacoesComplementacaoView.vue"),
     },
   ],
 });
