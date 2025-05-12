@@ -28,7 +28,7 @@ const router = createRouter({
     {
       path: "/info-complementar",
       name: "info-complementar",
-      component: () => import("../views/dashboard/pendencias/InformacoesComplementacaoView.vue"),
+      component: () => import("../views/dashboard/pendencias/InfoComplementView.vue"),
     },
   ],
 });

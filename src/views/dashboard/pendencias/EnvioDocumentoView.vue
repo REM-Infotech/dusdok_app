@@ -43,7 +43,7 @@ const invalidFeedbackref = ref(false);
           <div>
             <BForm v-if="show" @submit="onSubmit" @reset="onReset" data-bs-theme="light">
               <BRow>
-                <BCol v-for="(form, index) in store.list_form" :key="index">
+                <BCol v-for="(form, index) in store.list_form" :key="index" md="12" class="mb-3">
                   <FormGroup
                     v-model:model-value="form.modelValue"
                     v-model:validState="invalidFeedbackref"
