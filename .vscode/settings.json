@@ -21,7 +21,7 @@
     "log": true,
     "properties": false,
     "vue": false,
-    "typescript": false,
+    "typescript": true,
     "jsonc": true,
     "javascript": true
   },
